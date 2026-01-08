@@ -9,9 +9,23 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('Could not connect to MongoDB:', err));
+// Connect to MongoDB
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI);
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+  } catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exit(1);
+  }
+};
+
+// Connect to DB before listening
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Student registration app listening on http://localhost:${PORT}`);
+  });
+});
 
 app.use(cors());
 app.use(express.json());
@@ -95,6 +109,5 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'static', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log(`Student registration app listening on http://localhost:${PORT}`);
-});
+// app.listen moved inside connectDB promise
+
