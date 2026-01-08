@@ -1,0 +1,168 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background: #111827;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.nav-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.container {
+  flex: 1;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: #020617;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #1f2937;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+label {
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #9ca3af;
+}
+
+input, select {
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid #374151;
+  background: #020617;
+  color: #e5e7eb;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: #38bdf8;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: white;
+}
+
+.btn.danger {
+  background: #b91c1c;
+  color: white;
+}
+
+.btn.sm {
+  padding: 0.25rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn + .btn {
+  margin-left: 0.3rem;
+}
+
+.message {
+  margin-top: 0.5rem;
+  min-height: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.message.error {
+  color: #fca5a5;
+}
+
+.message.success {
+  color: #bbf7d0;
+}
+
+.table-wrapper {
+  max-height: 400px;
+  overflow-y: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #1f2937;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead {
+  background: #020617;
+  position: sticky;
+  top: 0;
+}
+
+th, td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #111827;
+  text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+  background: #020617;
+}
+
+tbody tr:nth-child(even) {
+  background: #020617;
+}
+
+.footer {
+  padding: 0.7rem 1.5rem;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  border-top: 1px solid #1f2937;
+  background: #020617;
+}
+
+@media (max-width: 640px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+}

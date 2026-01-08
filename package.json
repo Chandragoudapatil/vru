@@ -1,0 +1,13 @@
+{
+  "name": "student-registration-app",
+  "version": "1.0.0",
+  "description": "Simple student registration app with Node.js, Express, and vanilla HTML/CSS/JS.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "cors": "^2.8.5"
+  }
+}
